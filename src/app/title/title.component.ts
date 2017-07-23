@@ -12,4 +12,7 @@ export class TitleComponent implements OnInit {
   ngOnInit() {
   }
 
+  getTitle() {
+    return this.title;
+  }
 }
