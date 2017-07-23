@@ -1,8 +1,10 @@
-import { TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -29,4 +31,11 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
   }));
+
+
+  it('should appear app-title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const element = fixture.debugElement.query(By.css('app-title')).nativeElement;
+    expect(element).toBeTruthy();
+  });
 });
