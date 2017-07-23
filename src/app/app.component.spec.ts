@@ -2,13 +2,15 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 import { By } from '@angular/platform-browser';
+import { TitleComponent } from './title/title.component';
 
 describe('AppComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        TitleComponent
       ],
     }).compileComponents();
   }));
@@ -29,7 +31,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+    expect(compiled.querySelector('h1').textContent).toContain('todos');
   }));
 
 
