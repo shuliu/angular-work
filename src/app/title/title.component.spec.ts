@@ -29,6 +29,10 @@ describe('TitleComponent', () => {
     expect(component.title).toBe('todos');
   });
 
+  it(`should have as getTitle'`, () => {
+    expect(component.getTitle()).toBe('todos');
+  });
+
 
   it(`should use title property in HTML`, () => {
     component.title = 'fake';

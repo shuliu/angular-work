@@ -7,8 +7,9 @@ describe('tdd App', () => {
     page = new TddPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display todos', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('todos');
   });
+
 });
