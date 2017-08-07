@@ -50,4 +50,19 @@ describe('AppComponent', () => {
     });
   });
 
+  describe(`Property Binding`, () => {
+    // 整合測試 - 輸入欄位提示 placeholder 是否存在
+    it(`should use 'inputHint' field on 'placeholder' attribute in HTML`, () => {
+      component.inputHint = 'fake';
+      fixture.detectChanges();
+
+      htmlElement = debugElement.query(By.css('.new-todo')).nativeElement;
+      expect(htmlElement.getAttribute('placeholder')).toBe('fake');
+    });
+
+    // 單元測試 inputHint placeholder 必須是 "What needs to be done?"
+    it(`should 'inputHint' placeholder is 'What needs to be done?'`, () => {
+      expect(target.inputHint).toBe('What needs to be done?');
+    });
+  });
 });
