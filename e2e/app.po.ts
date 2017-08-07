@@ -5,10 +5,6 @@ export class TddPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
-  }
-
   getTodos() {
     return element(by.css('app-root h1')).getText();
   }
