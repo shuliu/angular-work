@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-
+  inputHint = 'What needs to be done?';
   getPlaceHolder() {}
+
 }

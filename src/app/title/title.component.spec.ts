@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { DebugElement, debugElement } from '@angular/core';
+import { DebugElement } from '@angular/core';
 
 import { By } from '@angular/platform-browser';
 import { TitleComponent } from './title.component';
