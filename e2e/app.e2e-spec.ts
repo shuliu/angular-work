@@ -1,6 +1,6 @@
 import { TddPage } from './app.po';
 
-describe('tdd App', () => {
+describe('TDDtodo', () => {
   let page: TddPage;
 
   beforeEach(() => {
@@ -9,7 +9,11 @@ describe('tdd App', () => {
 
   it('should display todos', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('todos');
+    expect(page.getTodos()).toBe('todos');
   });
 
+  it(`input.new-todo placeholder is "What needs to be done?"`, () => {
+    page.navigateTo();
+    expect(page.getPlaceHolder()).toBe('What needs to be done?');
+  });
 });

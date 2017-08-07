@@ -1,45 +1,41 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { DebugElement, debugElement } from '@angular/core';
 
 import { By } from '@angular/platform-browser';
 import { TitleComponent } from './title.component';
+import { element } from 'protractor';
 
 describe('TitleComponent', () => {
   let component: TitleComponent;
   let fixture: ComponentFixture<TitleComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TitleComponent ]
-    })
-    .compileComponents();
-  }));
+  let debugElement: DebugElement;
+  let element: HTMLElement;
+  let target: TitleComponent;
 
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ TitleComponent ]
+    });
+
     fixture = TestBed.createComponent(TitleComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should be created', () => {
-    expect(component).toBeTruthy();
+    debugElement = fixture.debugElement;
+    target = new TitleComponent();
   });
 
 
-  it(`should have as title 'todos'`, () => {
-    expect(component.title).toBe('todos');
-  });
+  describe('Interpolation Binding: field', () => {
+    it(`should use title field in HTML`, () => {
+      component.title = 'fake';
+      fixture.detectChanges();
 
-  it(`should have as getTitle'`, () => {
-    expect(component.getTitle()).toBe('todos');
-  });
+      element = debugElement.query(By.css('h1')).nativeElement;
+      expect(element.textContent).toBe('fake');
+    });
 
-
-  it(`should use title property in HTML`, () => {
-    component.title = 'fake';
-    fixture.detectChanges();
-
-    const element = fixture.debugElement.query(By.css('h1')).nativeElement;
-    expect(element.textContent).toBe('fake');
+    it(`should have title as 'todos' in class`, () => {
+      expect(target.title).toBe('todos');
+    });
   });
 
 });
