@@ -10,6 +10,10 @@ export class TddPage {
   }
 
   getTodos() {
-    // return element(by.css)
+    return element(by.css('app-root h1')).getText();
+  }
+
+  getPlaceHolder() {
+    return element(by.css('.new-todo')).getAttribute('placeholder');
   }
 }
